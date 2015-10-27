@@ -1,0 +1,33 @@
+body{
+	background-color: #266;
+}
+
+.loggin
+{	
+    width: 260px;
+    padding: 20px 20px;
+    margin: 0 auto 20px;
+}
+.h3
+{
+	color=red;	
+}
+.tituloNobre
+{
+	float: right;
+	margin-right: 200px;
+	margin-top: 180px;
+
+}
+
+.imagenPrincipal
+{
+	margin-top: 50px;
+	margin-left: 100px
+}
+.textoBusqueda
+{
+	margin-left:  350px;
+	margin-right:  100px;	
+}
+
