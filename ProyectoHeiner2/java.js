@@ -37,12 +37,48 @@ function login()
 }
 function cargarNombre()
 {
-	var logeado;
+	debugger;
+	var logeado= JSON.parse(localStorage.getItem('logeado'));
+	
+	$('#label').html(logeado[0].username);
+}
+
+function cargarCorreos()
+ {
+
+	// leo los correos del ls
 	try {
-		logeado = JSON.parse(localStorage['logeado']);
+		correosls = JSON.parse(localStorage['correos']);
 	} catch(e) {
-		logeado = [];
+		correosls = [];
 		console.log(e);
 	}
-	$('#label').html(logeado);
+	// loop users
+	var correos_html = "";
+	for (var i = 0; i < correosls.length; i++) {
+		// add users to the table
+		var c = correosls[i];
+		correos_html = correos_html + "<tr><td>"+c.de+"</td><td>"+
+		c.asunto+"</td></tr>"+ "<tr><td>"+  +"</td></tr>";
+	}
+
+	$('#correos').html(correos_html);
+
+}
+function guardarCorreos()
+{	
+	var correos;
+	try {
+		correos = JSON.parse(localStorage['correos']);
+	} catch(e) {
+		correos = [];
+		console.log(e);
+	}	
+	var correo = {
+		"para": document.getElementById("email").value,
+		"asunto": document.getElementById("asunto").value,
+		"contenido":document.getElementById("contenido").value
+	};	
+	correos.push(correo);
+	localStorage['correos'] = JSON.stringify(correos);
 }
