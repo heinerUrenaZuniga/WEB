@@ -56,10 +56,10 @@ function cargarCorreos()
 	for (var i = 0; i < correosls.length; i++) {
 		// add users to the table
 		var c = correosls[i];
-		correos_html = "<div class=darlevida>"+c.para+"</div>"+"<div class=darlevida2>"+'     '+c.asunto+"</div>";
-
-	}	
+		correos_html = "<div class=darlevida>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div> <br";
+		
 	$('#correos').html(correos_html);
+	}	
 
 }
 function guardarCorreos()
