@@ -34,22 +34,34 @@ color: #333;
 }
 .bordesBandeja
 {
-	margin-left: -22%;
-    margin-top: -15%;
+	    margin-left: -9%;
+    margin-top: -11%;
 }
 .darlevida
 {
  color: #333; 
  background-color: #075059;
- width:20%;
- margin-top: 10%;
- padding-top: 10%;
- margin-left: 10%;
- margin-bottom: 10%;
- padding-bottom: 10%;
- border: solid;
+    padding-top: -9%;
+    margin-left: 55%;
+    margin-bottom: -3%;
+    padding-bottom: 1%;
+ float: left;
+}
+.darlevida2
+{
+ color: #333; 
+ background-color: #075059;
+    padding-top: -9%;
+    margin-left: 55%;
+    margin-bottom: -3%;
+    padding-bottom: 1%;
 }
 .titulo
 {
 color: white; 
+}
+.rescate
+{
+	margin-left: -111%;
+    margin-right: 18%
 }

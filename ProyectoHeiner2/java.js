@@ -56,8 +56,8 @@ function cargarCorreos()
 	for (var i = 0; i < correosls.length; i++) {
 		// add users to the table
 		var c = correosls[i];
-		correos_html = "<tr class=darlevida> <td>"+   c.para+"</td><td>"+'                      '+c.asunto+"</td> </tr>";
-		
+		correos_html = "<div class=darlevida>"+c.para+"</div>"+"<div class=darlevida2>"+'     '+c.asunto+"</div>";
+
 	}	
 	$('#correos').html(correos_html);
 
