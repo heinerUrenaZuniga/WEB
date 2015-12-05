@@ -60,7 +60,7 @@ function cargarCorreos()
 	for (var i = 0; i < correosls.length; i++) {
 		// add users to the table
 		var c = correosls[i];
-		correos_html += "<div class=darlevida onlick=mostrarCorreos()>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div><br>";	
+		correos_html += "<div class=darlevida onlick=mostrarCorreos();>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div><br>";	
 	}
 	$('#correos').html(correos_html);
 }
@@ -84,4 +84,9 @@ function guardarCorreos()
 	};	
 	correos.push(correo);
 	localStorage['correos'] = JSON.stringify(correos);
+	alert("como tal");
+}
+function abrir()
+{
+	window.open("principal.html");
 }
