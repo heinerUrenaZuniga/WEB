@@ -44,9 +44,13 @@ function cargarNombre()
 
 function cargarCorreos()
  {
-	// leo los correos del ls
+	// leo los correos del ls	
 	try {
 		correosls = JSON.parse(localStorage['correos']);
+		if(correosls===null)
+		{
+			return;
+		}
 	} catch(e) {
 		correosls = [];
 		console.log(e);
@@ -56,11 +60,13 @@ function cargarCorreos()
 	for (var i = 0; i < correosls.length; i++) {
 		// add users to the table
 		var c = correosls[i];
-		correos_html = "<div class=darlevida>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div> <br";
-		
+		correos_html += "<div class=darlevida onlick=mostrarCorreos()>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div><br>";	
+	}
 	$('#correos').html(correos_html);
-	}	
-
+}
+function mostrarCorreos()
+{
+	alert("aqui esta el div");
 }
 function guardarCorreos()
 {	
