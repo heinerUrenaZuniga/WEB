@@ -37,7 +37,6 @@ function login()
 }
 function cargarNombre()
 {
-	debugger;
 	var logeado= JSON.parse(localStorage.getItem('logeado'));
 	
 	$('#label').html(logeado[0].username);
@@ -45,7 +44,6 @@ function cargarNombre()
 
 function cargarCorreos()
  {
-
 	// leo los correos del ls
 	try {
 		correosls = JSON.parse(localStorage['correos']);
@@ -58,10 +56,9 @@ function cargarCorreos()
 	for (var i = 0; i < correosls.length; i++) {
 		// add users to the table
 		var c = correosls[i];
-		correos_html = correos_html + "<tr><td>"+c.de+"</td><td>"+
-		c.asunto+"</td></tr>"+ "<tr><td>"+  +"</td></tr>";
-	}
-
+		correos_html = "<tr class=darlevida> <td>"+   c.para+"</td><td>"+'                      '+c.asunto+"</td> </tr>";
+		
+	}	
 	$('#correos').html(correos_html);
 
 }

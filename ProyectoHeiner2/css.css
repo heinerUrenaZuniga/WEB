@@ -15,10 +15,12 @@ color: #333;
 #botonesDDerecha
 {
 	margin-top: 70%;
+	margin-left: 15%;
 }
 #botonesDDerecha2
 {
 	margin-top: 1%;
+	margin-left: 15%;
 }
 .borde
 {
@@ -28,9 +30,26 @@ color: #333;
 .comotal
 {
 	margin-left: -22%;
+    margin-right: 50%;
 }
 .bordesBandeja
 {
 	margin-left: -22%;
     margin-top: -15%;
+}
+.darlevida
+{
+ color: #333; 
+ background-color: #075059;
+ width:20%;
+ margin-top: 10%;
+ padding-top: 10%;
+ margin-left: 10%;
+ margin-bottom: 10%;
+ padding-bottom: 10%;
+ border: solid;
+}
+.titulo
+{
+color: white; 
 }
