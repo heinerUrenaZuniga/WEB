@@ -1,3 +1,4 @@
+var selogeo=false;
 function guardar()
 {	
 	var cuentas;
@@ -34,17 +35,39 @@ function login()
 	 	localStorage['logeado']=JSON.stringify(datosdellogeados);
 	 	} 
 	}
+	selogeo=true;
 }
 function cargarNombre()
 {
+	if(selogeo===true)
+	{	
 	var logeado= JSON.parse(localStorage.getItem('logeado'));
 	
 	$('#label').html(logeado[0].username);
+	}
+	else
+	{
+		window.close();
+		window.open("index.html");
+	}
+}
+function versiestalogeado()
+{
+	if(selogeo===true)
+	{
+		alert("Bienvenido");
+	}
+	else
+	{		
+		window.close();	
+		window.open("index.html");		
+	}
 }
 
 function cargarCorreos()
  {
-	// leo los correos del ls	
+	// leo los correos del ls
+
 	try {
 		correosls = JSON.parse(localStorage['correos']);
 		if(correosls===null)
@@ -63,6 +86,7 @@ function cargarCorreos()
 		correos_html += "<div class=darlevida onlick=mostrarCorreos();>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div><br>";	
 	}
 	$('#correos').html(correos_html);
+
 }
 function mostrarCorreos()
 {
