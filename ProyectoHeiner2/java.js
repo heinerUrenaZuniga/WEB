@@ -28,28 +28,32 @@ function login()
 	 {
 	 	if(cuentas[i].username===document.getElementById("correo").value && cuentas[i].password === document.getElementById("password").value)
 	 	{	 	
+	 	selogeo=true;
 	 	datosdellogeados=[];
 	 	var datoslogeados = 
 	 	{"username": document.getElementById("correo").value};
 		datosdellogeados.push(datoslogeados);	
 	 	localStorage['logeado']=JSON.stringify(datosdellogeados);
-	 	} 
+	 	window.close();
+	 	window.open("badejaSalida.html");
+	 	}
+	 	else
+	 	{
+	 		document.getElementById("correo").value=" ";	 		
+	 		document.getElementById("password").value=" ";
+	 	}
 	}
-	selogeo=true;
+	
 }
 function cargarNombre()
 {
-	if(selogeo===true)
-	{	
+	
+	
 	var logeado= JSON.parse(localStorage.getItem('logeado'));
 	
 	$('#label').html(logeado[0].username);
-	}
-	else
-	{
-		window.close();
-		window.open("index.html");
-	}
+		
+	
 }
 function versiestalogeado()
 {
@@ -58,7 +62,7 @@ function versiestalogeado()
 		alert("Bienvenido");
 	}
 	else
-	{		
+	{			
 		window.close();	
 		window.open("index.html");		
 	}
@@ -67,7 +71,8 @@ function versiestalogeado()
 function cargarCorreos()
  {
 	// leo los correos del ls
-
+	
+	
 	try {
 		correosls = JSON.parse(localStorage['correos']);
 		if(correosls===null)
@@ -86,11 +91,7 @@ function cargarCorreos()
 		correos_html += "<div class=darlevida onlick=mostrarCorreos();>"+c.para+"</div>"+"<div class=darlevida2>"+c.asunto+"</div><br>";	
 	}
 	$('#correos').html(correos_html);
-
-}
-function mostrarCorreos()
-{
-	alert("aqui esta el div");
+	
 }
 function guardarCorreos()
 {	
@@ -109,8 +110,4 @@ function guardarCorreos()
 	correos.push(correo);
 	localStorage['correos'] = JSON.stringify(correos);
 	alert("como tal");
-}
-function abrir()
-{
-	window.open("principal.html");
 }
