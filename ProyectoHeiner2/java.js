@@ -109,5 +109,5 @@ function guardarCorreos()
 	};	
 	correos.push(correo);
 	localStorage['correos'] = JSON.stringify(correos);
-	alert("como tal");
+	
 }
